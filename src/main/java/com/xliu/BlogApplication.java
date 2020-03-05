@@ -1,0 +1,17 @@
+package com.xliu;
+
+/**
+ * @author liuxin
+ * @version 1.0
+ * @date 2020/3/5 18:51
+ */
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BlogApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(BlogApplication.class, args);
+    }
+}
