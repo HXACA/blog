@@ -37,6 +37,9 @@ public class Blog {
     @ManyToMany(cascade = {CascadeType.PERSIST})
     private List<Tag> tags = new ArrayList<>();
 
+    @Transient
+    private String tagIds;
+
 
     @ManyToOne
     private User user;
@@ -203,4 +206,36 @@ public class Blog {
                 ", updateTime=" + updateTime +
                 '}';
     }
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
+    }
+
+    public void init(){
+        this.tagIds = tagsToIds(this.getTags());
+    }
+
+    public String tagsToIds(List<Tag>tags){
+        if(!tags.isEmpty()){
+            StringBuffer ids = new StringBuffer();
+            boolean flag = false;
+            for (Tag tag : tags) {
+                if(flag){
+                    ids.append(",");
+                }
+                else{
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        }else{
+            return tagIds;
+        }
+    }
+
 }

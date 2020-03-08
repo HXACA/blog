@@ -4,6 +4,8 @@ import com.xliu.bean.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 /**
  * @author liuxin
  * @version 1.0
@@ -21,4 +23,6 @@ public interface TypeService {
     void deleteType(Long id);
 
     Type getTypeByName(String name);
+
+    List<Type> getAllType();
 }
