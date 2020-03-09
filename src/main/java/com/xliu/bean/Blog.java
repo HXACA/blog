@@ -26,6 +26,7 @@ public class Blog {
     private boolean commentabled;
     private boolean published;
     private boolean recommend;
+    private String description;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
@@ -46,6 +47,14 @@ public class Blog {
 
     @OneToMany(mappedBy = "blog")
     private List<Comment> comments = new ArrayList<>();
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Blog() {
     }
@@ -202,8 +211,14 @@ public class Blog {
                 ", commentabled=" + commentabled +
                 ", published=" + published +
                 ", recommend=" + recommend +
+                ", description='" + description + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", tagIds='" + tagIds + '\'' +
+                ", user=" + user +
+                ", comments=" + comments +
                 '}';
     }
 

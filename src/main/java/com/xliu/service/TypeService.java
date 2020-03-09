@@ -25,4 +25,6 @@ public interface TypeService {
     Type getTypeByName(String name);
 
     List<Type> getAllType();
+
+    List<Type> getTopType(Integer size);
 }

@@ -1,6 +1,7 @@
 package com.xliu.service;
 
 import com.xliu.bean.Tag;
+import com.xliu.bean.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -27,5 +28,7 @@ public interface TagService {
     List<Tag> getAllTags();
 
     List<Tag> listTag(String ids);
+
+    List<Tag> getTopTags(Integer size);
 
 }
